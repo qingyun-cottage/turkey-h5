@@ -1,0 +1,193 @@
+<script setup lang="ts">
+import OptionStrip from '@/components/OptionStrip.vue'
+import { ref } from 'vue'
+
+const options = [
+    'A. 炸鸡暴击：酥脆上瘾，深夜快乐音浪',
+    'B. 辣酱开罐：“啵”一声，辣力音效觉醒',
+    'C. 烤肉滋啦：烟火混响，DNA音浪狂飙',
+    'D. 薯片咔嚓：辣味上头，快乐不设防',
+    'E. 冰块碰撞：辣到冒火？一秒降温',
+    'F. 可乐气泡：辣后救赎，治愈气泡音',
+    'G.火锅沸腾：辣到灵魂震颤，停不下来',
+]
+
+const selectQueue = ref<number[]>([])
+
+// 选项选择
+const handleSelect = (index: number) => {
+    if (selectQueue.value.includes(index)) {
+        selectQueue.value = selectQueue.value.filter(item => item !== index)
+    } else {
+        if (selectQueue.value.length >= 4) {
+            console.log('最多只能选择四项')
+            return
+        }
+        selectQueue.value.push(index)
+    }
+}
+
+// 提交
+const handleSubmit = () => {
+    console.log('提交', selectQueue.value)
+}
+</script>
+
+<template>
+    <div class="page">
+        <div class="text_box">
+            <span class="no_warp">
+                哪种声音最能把你点燃?
+                <!-- TODO: 去掉 -->
+                <!-- <span style="font-size: 12px">{{ selectQueue }}</span> -->
+            </span>
+            <span>
+                #请<span class="text_yellow text_big">按顺序</span>选择<span
+                    class="text_yellow"
+                    >其中<span class="text_big">四</span>项</span
+                >#
+            </span>
+        </div>
+
+        <div class="options_box">
+            <div class="option" v-for="(option, index) in options">
+                <!-- <span
+                    @click="handleSelect(index)"
+                    :active="selectQueue.includes(index)"
+                >
+                    {{ option }}
+                </span> -->
+                <OptionStrip
+                    @click="handleSelect(index)"
+                    :active="selectQueue.includes(index)"
+                >
+                    {{ option }}
+                </OptionStrip>
+            </div>
+        </div>
+
+        <MainBtn class="btn" @click="handleSubmit">
+            <span class="text_white">生成我的</span>
+            <span class="text_yellow">辣音档案</span>
+        </MainBtn>
+    </div>
+</template>
+
+<style lang="less" scoped>
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+
+    .text_box {
+        margin: 80px auto 36px;
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        color: #fff;
+        text-align: center;
+        font-family: YouSheBiaoTiYuan;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+
+        .no_warp {
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        // > span {
+        //     // 不换行
+        //     white-space: nowrap;
+        //     overflow: hidden;
+        // }
+    }
+
+    .options_box {
+        flex: 1;
+        width: 100%;
+        overflow: auto;
+        // background: #0003;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+
+        .option {
+            display: flex;
+            justify-content: end;
+            margin: 0 auto;
+
+            &:nth-child(1),
+            &:nth-child(3),
+            &:nth-child(5) {
+                justify-content: start;
+            }
+
+            &:nth-child(1) {
+                margin-left: 48px;
+            }
+            &:nth-child(2) {
+                margin-right: 15px;
+            }
+            &:nth-child(3) {
+                margin-left: 21px;
+            }
+            &:nth-child(4) {
+                margin-right: 32px;
+            }
+            &:nth-child(5) {
+                margin-left: 31px;
+            }
+            &:nth-child(6) {
+                margin-right: 14px;
+            }
+            &:nth-child(7) {
+                margin-right: 30px;
+            }
+        }
+    }
+
+    .btn {
+        margin: 36px auto 60px;
+    }
+
+    .text_big {
+        font-size: 32px;
+    }
+}
+
+.text_box,
+.options_box,
+.btn {
+    animation: fadeIn 1.2s ease-in alternate both;
+}
+
+.text_box {
+    // 先显示
+    animation-delay: 0.2s;
+}
+.options_box {
+    animation-delay: 1.6s;
+}
+.btn {
+    animation-delay: 2.8s;
+}
+
+// 渐显动画
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+</style>
