@@ -1,74 +1,51 @@
 <script setup lang="ts">
-import OptionStrip from '@/components/OptionStrip.vue'
-import { ref } from 'vue'
+import { useStepStore } from '@/store/stepStore'
 
-const options = [
-    'A. 炸鸡暴击：酥脆上瘾，深夜快乐音浪',
-    'B. 辣酱开罐：“啵”一声，辣力音效觉醒',
-    'C. 烤肉滋啦：烟火混响，DNA音浪狂飙',
-    'D. 薯片咔嚓：辣味上头，快乐不设防',
-    'E. 冰块碰撞：辣到冒火？一秒降温',
-    'F. 可乐气泡：辣后救赎，治愈气泡音',
-    'G.火锅沸腾：辣到灵魂震颤，停不下来',
-]
+const { incrementStep } = useStepStore()
 
-const selectQueue = ref<number[]>([])
+defineProps<{ remainingTime: string }>()
+const emit = defineEmits(['pauseAudio'])
 
-// 选项选择
-const handleSelect = (index: number) => {
-    if (selectQueue.value.includes(index)) {
-        selectQueue.value = selectQueue.value.filter(item => item !== index)
-    } else {
-        if (selectQueue.value.length >= 4) {
-            console.log('最多只能选择四项')
-            return
-        }
-        selectQueue.value.push(index)
-    }
-}
-
-// 提交
-const handleSubmit = () => {
-    console.log('提交', selectQueue.value)
+const handleClick = () => {
+    incrementStep()
+    // 暂停音频
+    emit('pauseAudio')
 }
 </script>
 
 <template>
     <div class="page">
-        <div class="text_box">
-            <span class="no_warp">
-                哪种声音最能把你点燃?
-                <!-- TODO: 去掉 -->
-                <!-- <span style="font-size: 12px">{{ selectQueue }}</span> -->
+        <div class="text_box fadeIn_el fadeIn_el_no1">
+            <span class="text_white"
+                >当<span class="text_yellow">辣酱</span>蘸上</span
+            >
+            <span class="text_yellow no_warp">
+                炸鸡、烤肉、深夜泡面<span class="spacing">······</span>
             </span>
+            <span class="text_white"
+                >每一"蘸”都藏着你的<span class="text_yellow"
+                    >灵魂音效</span
+                ></span
+            >
             <span>
-                #请<span class="text_yellow text_big">按顺序</span>选择<span
-                    class="text_yellow"
-                    >其中<span class="text_big">四</span>项</span
-                >#
+                <span class="text_white">就此刻，</span>
+                <span class="text_yellow">坠入音浪</span>
             </span>
         </div>
 
-        <div class="options_box">
-            <div class="option" v-for="(option, index) in options">
-                <!-- <span
-                    @click="handleSelect(index)"
-                    :active="selectQueue.includes(index)"
-                >
-                    {{ option }}
-                </span> -->
-                <OptionStrip
-                    @click="handleSelect(index)"
-                    :active="selectQueue.includes(index)"
-                >
-                    {{ option }}
-                </OptionStrip>
+        <div class="show_box fadeIn_el fadeIn_el_no2">
+            <div class="timer">
+                <div class="bg">
+                    <img src="@/assets/img/headset.svg" alt="" />
+                </div>
+                <div class="text">{{ remainingTime }}</div>
             </div>
+            <div class="wave"></div>
         </div>
 
-        <MainBtn class="btn" @click="handleSubmit">
-            <span class="text_white">生成我的</span>
-            <span class="text_yellow">辣音档案</span>
+        <MainBtn class="btn fadeIn_el fadeIn_el_no3" @click="handleClick">
+            <span class="text_white">聆听</span>
+            <span class="text_yellow">完毕</span>
         </MainBtn>
     </div>
 </template>
@@ -78,116 +55,86 @@ const handleSubmit = () => {
     position: absolute;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
 
     .text_box {
-        margin: 80px auto 36px;
+        margin: 80px auto;
         text-align: center;
 
         display: flex;
         flex-direction: column;
         justify-content: center;
 
-        color: #fff;
+        color: var(--White, #fff);
         text-align: center;
         font-family: YouSheBiaoTiYuan;
-        font-size: 24px;
+        font-size: 26px;
         font-style: normal;
         font-weight: 400;
-        line-height: 120%;
+        line-height: 110%; /* 28.6px */
 
         .no_warp {
             white-space: nowrap;
             overflow: hidden;
         }
-
-        // > span {
-        //     // 不换行
-        //     white-space: nowrap;
-        //     overflow: hidden;
-        // }
     }
 
-    .options_box {
-        flex: 1;
+    .show_box {
+        position: absolute;
         width: 100%;
-        overflow: auto;
-        // background: #0003;
+        top: 60%;
+        transform: translateY(-60%);
+        // top: 45%;
         display: flex;
         flex-direction: column;
-        gap: 22px;
+        align-items: center;
 
-        .option {
-            display: flex;
-            justify-content: end;
-            margin: 0 auto;
+        .timer {
+            width: 120px;
+            height: 120px;
+            position: relative;
 
-            &:nth-child(1),
-            &:nth-child(3),
-            &:nth-child(5) {
-                justify-content: start;
+            .bg {
+                position: absolute;
+                left: -2.5px;
+                width: 120px;
+                height: 120px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
             }
+            .text {
+                margin-top: 70px;
 
-            &:nth-child(1) {
-                margin-left: 48px;
+                color: var(--White, #fff);
+                text-align: center;
+                font-family: Inter;
+                font-size: 11px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
             }
-            &:nth-child(2) {
-                margin-right: 15px;
-            }
-            &:nth-child(3) {
-                margin-left: 21px;
-            }
-            &:nth-child(4) {
-                margin-right: 32px;
-            }
-            &:nth-child(5) {
-                margin-left: 31px;
-            }
-            &:nth-child(6) {
-                margin-right: 14px;
-            }
-            &:nth-child(7) {
-                margin-right: 30px;
-            }
+        }
+
+        .wave {
+            margin-top: 40px;
+            width: 311px;
+            height: 30px;
+            flex-shrink: 0;
+            background: url('@/assets/img/wave.svg') 50% / contain no-repeat;
         }
     }
 
     .btn {
-        margin: 36px auto 60px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 60px;
     }
 
-    .text_big {
-        font-size: 32px;
-    }
-}
-
-.text_box,
-.options_box,
-.btn {
-    animation: fadeIn 1.2s ease-in alternate both;
-}
-
-.text_box {
-    // 先显示
-    animation-delay: 0.2s;
-}
-.options_box {
-    animation-delay: 1.6s;
-}
-.btn {
-    animation-delay: 2.8s;
-}
-
-// 渐显动画
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
+    .spacing {
+        letter-spacing: -15.08px;
     }
 }
 </style>

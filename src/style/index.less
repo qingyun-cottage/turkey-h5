@@ -13,6 +13,10 @@ body {
     font-family: 'YouSheBiaoTiYuan';
     src: url('@/assets/font/YouSheBiaoTiYuan.otf');
 }
+@font-face {
+    font-family: 'GenSenRounded TW';
+    src: url('@/assets/font/GenSenRounded-M.ttc');
+}
 
 #app {
     position: absolute;
@@ -30,4 +34,28 @@ body {
 }
 .text_yellow {
     color: var(--Yellow, #fee522);
+}
+
+// 渐显动画元素
+.fadeIn_el {
+    animation: fadeIn 1.2s ease-in alternate both;
+}
+.fadeIn_el_no1 {
+    animation-delay: 0.2s;
+}
+.fadeIn_el_no2 {
+    animation-delay: 1.6s;
+}
+.fadeIn_el_no3 {
+    animation-delay: 2.8s;
+}
+
+// 渐显动画
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

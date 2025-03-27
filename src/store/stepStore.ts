@@ -3,25 +3,21 @@ import { ref } from 'vue'
 
 export const useStepStore = defineStore('step', () => {
     // 使用 ref 定义状态
-    const currentStep = ref(1)
-
-    // 定义 getters
-    const getCurrentStep = () => currentStep.value
+    const step = ref(1)
 
     // 定义 actions
     const incrementStep = () => {
-        currentStep.value++
+        step.value++
     }
 
     const decrementStep = () => {
-        if (currentStep.value > 1) {
-            currentStep.value--
+        if (step.value > 1) {
+            step.value--
         }
     }
 
     return {
-        currentStep,
-        getCurrentStep,
+        step,
         incrementStep,
         decrementStep,
     }
