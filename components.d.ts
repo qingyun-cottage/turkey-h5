@@ -7,28 +7,19 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    BasicBtn: typeof import('./src/components/btns/BasicBtn.vue')['default']
-    BlackBtn: typeof import('./src/components/btns/BlackBtn.vue')['default']
     Clause: typeof import('./src/components/Clause.vue')['default']
-    Close: typeof import('./src/components/icon/close.vue')['default']
     Close_icon: typeof import('./src/components/icon/close_icon.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Icon_test: typeof import('./src/components/icon_test.vue')['default']
     MainBtn: typeof import('./src/components/MainBtn.vue')['default']
-    NavBar: typeof import('./src/components/NavBar.vue')['default']
     OptionStrip: typeof import('./src/components/OptionStrip.vue')['default']
-    RedBtn: typeof import('./src/components/btns/RedBtn.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SelectItem: typeof import('./src/components/SelectItem.vue')['default']
     UserBox: typeof import('./src/components/UserBox.vue')['default']
     VanButton: typeof import('vant/es')['Button']
     VanCell: typeof import('vant/es')['Cell']
     VanEmpty: typeof import('vant/es')['Empty']
-    VanNavBar: typeof import('vant/es')['NavBar']
     VanOverlay: typeof import('vant/es')['Overlay']
-    VanPopup: typeof import('vant/es')['Popup']
-    WhiteBtn: typeof import('./src/components/btns/WhiteBtn.vue')['default']
   }
 }

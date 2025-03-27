@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useStepStore } from '@/store/stepStore'
 import { initHome } from '@/utils/tools'
 // import { h } from 'vue'
 
@@ -7,9 +8,12 @@ const emit = defineEmits<{
     (e: 'update:show', value: boolean): void
 }>()
 
+const { incrementStep } = useStepStore()
+
 const agree = () => {
     localStorage.setItem('samyang-agree-rule', '1')
     initHome()
+    incrementStep()
 }
 
 const notAgree = () => {
