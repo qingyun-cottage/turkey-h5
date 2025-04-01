@@ -39,27 +39,31 @@ const TextOption = computed(() => {
 const typeList = [
     {
         type: 1,
-        name: '摇滚风暴型',
-        desc1: '火辣摇滚！辣到震颤的爆裂音浪',
-        desc2: '火锅沸腾音，重金属狂响',
+        name: '【暗夜<span>甜</span>心型】',
+        desc1: '微辣暗甜！深夜R&B黏糯音浪',
+        desc2: '米饭裹酱开拌，暗夜单曲循环',
+        ratio: '36.8%',
     },
     {
         type: 2,
-        name: 'R&B暗夜型',
-        desc1: '暗夜R&B！微辣音效的治愈律动',
-        desc2: '深夜泡面音，吸溜声混搭慵懒贝斯',
+        name: '【热辣摇滚型】',
+        desc1: '爆辣直球！重金属音浪蘸满灵魂',
+        desc2: '沸腾火锅蘸酱，摇滚音浪狂响',
+        ratio: '24.3%',
     },
     {
         type: 3,
         name: '电子热辣型',
         desc1: '辣感电子！脉冲音浪的极致上头',
         desc2: '烤肉滋啦音，烟火混响电子音墙',
+        ratio: '24.1%',
     },
     {
         type: 4,
         name: '抒情微辣型',
         desc1: '微醺抒情！甜辣音效的平衡美学',
         desc2: '冰块碰撞音，清脆钢琴键混搭微辣和弦',
+        ratio: '14.8%',
     },
 ]
 </script>
@@ -73,9 +77,12 @@ const typeList = [
                 <span class="text_white"
                     >你的「声浪档案」是<span class="spacing"> -</span></span
                 >
-                <span class="text_yellow text_big">
-                    【{{ TextOption.name }}】
-                </span>
+                <div class="text_main_box">
+                    <span
+                        class="text_yellow text_special"
+                        v-html="TextOption.name"
+                    ></span>
+                </div>
                 <span class="text_small"
                     >全部人群中只有<span class="text_yellow">24.3%</span></span
                 >
@@ -95,11 +102,11 @@ const typeList = [
         <div class="btns_box fadeIn_el fadeIn_el_no3">
             <MainBtn class="btn" @click="">
                 <span class="text_white">保存</span>
-                <span class="text_yellow">声浪档案</span>
+                <span class="text_yellow">火辣之声</span>
             </MainBtn>
             <MainBtn class="btn" @click="">
-                <span class="text_white">前往</span>
-                <span class="text_yellow">活动抽奖</span>
+                <span class="text_white">前往天猫</span>
+                <span class="text_yellow">领取更多福利</span>
             </MainBtn>
         </div>
     </div>
@@ -116,7 +123,7 @@ const typeList = [
     overflow: hidden;
 
     .user_box {
-        margin-top: 36px;
+        margin-top: 38px;
     }
 
     .text_box {
@@ -128,7 +135,7 @@ const typeList = [
 
         color: var(--White, #fff);
         text-align: center;
-        font-family: YouSheBiaoTiYuan;
+        font-family: zihunxingmouhei_trial;
         font-size: 22px;
         font-style: normal;
         font-weight: 400;
@@ -177,21 +184,54 @@ const typeList = [
         gap: 40px;
     }
 
-    .text_big {
+    .text_main_box {
+        margin: 8px 0 16px;
+    }
+
+    .text_special {
         width: 100%;
-        margin: 16px 0;
-        display: inline-flex;
+
+        // display: inline-flex;
+        // 底部对齐
+        align-items: end;
         justify-content: center;
-        font-size: 50px;
+        font-size: 24px;
         letter-spacing: 1px;
         text-wrap: nowrap;
+        // letter-spacing: 0.72px;
+
+        :deep(> span) {
+            font-size: 36px;
+            // background: #000;
+        }
     }
     .text_small {
         font-size: 20px;
     }
 
     .spacing {
-        letter-spacing: -10px;
+        // letter-spacing: -10px;
     }
 }
 </style>
+
+<!-- <style lang="less">
+.text_special {
+    width: 100%;
+    margin: 16px 0;
+    // display: inline-flex;
+    // align-items: end;
+    // justify-content: center;
+    font-size: 36px;
+    letter-spacing: 1px;
+    text-wrap: nowrap;
+    // letter-spacing: 0.72px;
+
+    & > div {
+        // display: inline-flex;
+        // display: ;
+        font-size: 58px;
+        // background: #000;
+    }
+}
+</style> -->

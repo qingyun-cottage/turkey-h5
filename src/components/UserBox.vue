@@ -31,7 +31,7 @@ defineProps<{
     .user_name {
          color: var(--White, #fff);
         text-align: center;
-        font-family: 'GenSenRounded TW';
+        font-family: zihunxingmouhei_trial;
         font-size: 14px;
         font-style: normal;
         font-weight: 900;

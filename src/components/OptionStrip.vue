@@ -49,6 +49,7 @@ defineProps<{ active: boolean }>()
         position: absolute;
         z-index: 10;
         bottom: 0;
+        padding-right: 6px;
 
         content: '';
         display: block;
@@ -72,10 +73,10 @@ defineProps<{ active: boolean }>()
 
         span {
             color: var(--White, #fff);
-            font-family: 'GenSenRounded TW';
+            font-family: zihunxingmouhei_trial;
             font-size: 14px;
             font-style: normal;
-            font-weight: 900;
+            font-weight: 400;
             line-height: normal;
 
             // warp

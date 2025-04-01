@@ -45,13 +45,13 @@ const toNext = () => {
 .page {
     width: 100%;
     height: 100%;
-    background: url('@/assets/img/home_bg2.jpg') 50% / cover no-repeat;
+    background: url('@/assets/img/new_home.jpg') 50% 100% / cover no-repeat;
 
     .btn {
         position: absolute;
-        top: 68%;
+        bottom: 144px;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translateX(-50%);
 
         animation-delay: 0.5s;
     }

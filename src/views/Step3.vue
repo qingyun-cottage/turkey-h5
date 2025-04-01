@@ -66,7 +66,7 @@ const handleClick = () => {
 
         color: var(--White, #fff);
         text-align: center;
-        font-family: YouSheBiaoTiYuan;
+        font-family: zihunxingmouhei_trial;
         font-size: 26px;
         font-style: normal;
         font-weight: 400;

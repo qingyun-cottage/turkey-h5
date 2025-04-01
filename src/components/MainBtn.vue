@@ -12,11 +12,12 @@
 .mian_btn {
     display: inline-flex;
     height: 44px;
-    padding: 10px 20px;
+    // padding: 10px 20px;
+    padding: 10px 20px 12px;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    flex-shrink: 0;
+    align-self: stretch;
 
     border-radius: 12px 4px;
     border: 2px solid var(--Yellow, #fee522);
@@ -25,10 +26,10 @@
     position: relative;
 
     color: var(--White, #fff);
-    font-family: 'GenSenRounded TW';
+    font-family: zihunxingmouhei_trial;
     font-size: 18px;
     font-style: normal;
-    font-weight: 900;
+    font-weight: 400;
     line-height: normal;
 
     .content {

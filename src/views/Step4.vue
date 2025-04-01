@@ -8,13 +8,13 @@ const { setTypeByOpts } = useTypeStore()
 const { incrementStep } = useStepStore()
 
 const options = [
-    'A. 炸鸡蘸酱暴击：酥脆上瘾，深夜快乐声浪',
-    'B. 辣酱开罐飞"声"：“啵一声，蘸酱声浪觉醒',
-    'C.烤肉蘸酱滋啦：烟火混响，DNA声浪狂飙',
+    'A. 经典甜辣拌饭：米饭裹酱，黏糯声浪治愈',
+    'B. 火鸡辣酱开罐：“啵一声，蘸酱声浪觉醒',
+    'C. 烤肉蘸酱滋啦：烟火混响，DNA声浪狂飙',
     'D. 薯片蘸酱咔嚓：辣味声浪，快乐不设防',
-    'E. 冰块蘸酱碰撞：辣到冒火？一秒降温',
-    'F. 可乐蘸酱气泡：辣后救赎，治愈气泡音',
-    'G.火锅蘸酱沸腾：灵魂震颤，蘸到停不下来',
+    'E. 炸鸡蘸酱暴击：酥脆上瘾，深夜快乐声浪',
+    'F. 一口嘶哈过瘾：辣到冒火？嘶哈声浪救场',
+    'G. 沸腾火锅蘸酱：灵魂震颤，蘸到停不下来',
 ]
 
 const selectQueue = ref<number[]>([])
@@ -79,7 +79,7 @@ const handleSubmit = () => {
 
         <MainBtn class="btn fadeIn_el fadeIn_el_no3" @click="handleSubmit">
             <span class="text_white">生成我的</span>
-            <span class="text_yellow">声浪档案</span>
+            <span class="text_yellow">火辣之声</span>
         </MainBtn>
     </div>
 </template>
@@ -104,7 +104,7 @@ const handleSubmit = () => {
 
         color: var(--White, #fff);
         text-align: center;
-        font-family: YouSheBiaoTiYuan;
+        font-family: zihunxingmouhei_trial;
         font-size: 24px;
         font-style: normal;
         font-weight: 400;
@@ -137,25 +137,25 @@ const handleSubmit = () => {
             }
 
             &:nth-child(1) {
-                margin-left: 48px;
+                margin-left: 32px;
             }
             &:nth-child(2) {
-                margin-right: 15px;
+                margin-right: 22px;
             }
             &:nth-child(3) {
-                margin-left: 21px;
+                margin-left: 16px;
             }
             &:nth-child(4) {
-                margin-right: 32px;
+                margin-right: 36px;
             }
             &:nth-child(5) {
-                margin-left: 31px;
+                margin-left: 28px;
             }
             &:nth-child(6) {
-                margin-right: 14px;
+                margin-right: 18px;
             }
             &:nth-child(7) {
-                margin-right: 30px;
+                margin-right: 32px;
             }
         }
     }

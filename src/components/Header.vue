@@ -2,12 +2,15 @@
 
 <template>
     <div class="head">
-        <div class="logo logo_left">
+        <div class="logo new_logo">
+            <img src="@/assets/img/new_logo.svg" alt="" />
+        </div>
+        <!-- <div class="logo logo_left">
             <img src="@/assets/img/samyang.png" alt="" />
         </div>
         <div class="logo logo_right">
             <img src="@/assets/img/hot_sauce.svg" alt="" />
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -19,6 +22,13 @@
 
     .logo {
         position: absolute;
+    }
+
+    .new_logo{
+        top: 16px;
+        left: 26px;
+        width: 96px;
+        height: 46px;
     }
 
     .logo_left {
