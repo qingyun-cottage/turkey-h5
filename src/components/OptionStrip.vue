@@ -72,7 +72,8 @@ defineProps<{ active: boolean }>()
 
         span {
             color: var(--White, #fff);
-            font-family: 'GenSenRounded TW';
+            // font-family: 'GenSenRounded TW';
+            font-family: 'ResourceHanRounded_subset';
             font-size: 14px;
             font-style: normal;
             font-weight: 900;

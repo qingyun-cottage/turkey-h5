@@ -25,7 +25,8 @@
     position: relative;
 
     color: var(--White, #fff);
-    font-family: 'GenSenRounded TW';
+    // font-family: 'GenSenRounded TW';
+    font-family: 'ResourceHanRounded_subset';
     font-size: 18px;
     font-style: normal;
     font-weight: 900;
@@ -37,7 +38,7 @@
             display: block;
             content: '';
             position: absolute;
-            background: url('@/assets/img/star_icon.png') 50% / cover no-repeat;
+            background: url('//gitee.com/qingyun-cottage/resource/raw/main/app/turkey-h5/img/star_icon.png') 50% / cover no-repeat;
             // background-size: cover;
         }
 

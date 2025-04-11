@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import Header from './components/Header.vue'
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 import { useStepStore } from './store/stepStore'
 import Step1 from './views/Step1.vue'
 import Step2 from './views/Step2.vue'
@@ -69,9 +69,9 @@ const pauseAudio = () => {
 <template>
     <Header />
     <audio id="myAudio" ref="audioPlayer" loop preload="true">
-        <source src="./assets/audio/test.mp3" type="audio/mpeg" />
+        <source src="//gitee.com/qingyun-cottage/resource/raw/main/app/turkey-h5/audio/test.mp3" type="audio/mpeg" />
     </audio>
-    <HelloWorld msg="Vite + Vue" v-if="0" />
+    <!-- <HelloWorld msg="Vite + Vue" v-if="0" /> -->
     <Step1 v-show="step === 1" />
     <Step2 v-show="step === 2" @playAudio="playAudio" />
     <Step3

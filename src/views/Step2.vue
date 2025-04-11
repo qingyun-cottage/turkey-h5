@@ -27,7 +27,7 @@ const handleClick = () => {
 .page {
     width: 100%;
     height: 100%;
-    background: url('@/assets/img/start_bg2.jpg') 50% / cover no-repeat;
+    background: url('//gitee.com/qingyun-cottage/resource/raw/main/app/turkey-h5/img/start_bg2.jpg') 50% / cover no-repeat;
 
     .btn_box {
         width: 100%;

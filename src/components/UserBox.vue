@@ -29,9 +29,10 @@ defineProps<{
     }
 
     .user_name {
-         color: var(--White, #fff);
+        color: var(--White, #fff);
         text-align: center;
-        font-family: 'GenSenRounded TW';
+        // font-family: 'GenSenRounded TW';
+        font-family: 'ResourceHanRounded_subset';
         font-size: 14px;
         font-style: normal;
         font-weight: 900;

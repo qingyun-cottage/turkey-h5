@@ -163,7 +163,7 @@ const typeList = [
                     left: 0;
                     width: 18px;
                     height: 18px;
-                    background: url('@/assets/img/star2_icon.png') 50% / cover
+                    background: url('//gitee.com/qingyun-cottage/resource/raw/main/app/turkey-h5/img/star2_icon.png') 50% / cover
                         no-repeat;
                 }
             }

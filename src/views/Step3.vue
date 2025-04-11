@@ -36,7 +36,7 @@ const handleClick = () => {
         <div class="show_box fadeIn_el fadeIn_el_no2">
             <div class="timer">
                 <div class="bg">
-                    <img src="@/assets/img/headset.svg" alt="" />
+                    <img src="//gitee.com/qingyun-cottage/resource/raw/main/app/turkey-h5/img/headset.svg" alt="" />
                 </div>
                 <div class="text">{{ remainingTime }}</div>
             </div>
@@ -122,7 +122,7 @@ const handleClick = () => {
             width: 311px;
             height: 30px;
             flex-shrink: 0;
-            background: url('@/assets/img/wave.svg') 50% / contain no-repeat;
+            background: url('//gitee.com/qingyun-cottage/resource/raw/main/app/turkey-h5/img/wave.svg') 50% / contain no-repeat;
         }
     }
 

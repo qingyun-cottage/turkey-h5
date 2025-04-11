@@ -43,7 +43,7 @@ const notAgree = () => {
     <van-overlay :show="show" :lock-scroll="false">
         <div class="clause_box" @click.stop>
             <div class="close_icon" @click="$emit('update:show', false)">
-                <img src="@/assets/img/close.svg" alt="" />
+                <img src="//gitee.com/qingyun-cottage/resource/raw/main/app/turkey-h5/img/close.svg" alt="" />
             </div>
             <div class="title">三养食品网页使用条款和条件</div>
             <div class="content">

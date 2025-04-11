@@ -18,8 +18,6 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     UserBox: typeof import('./src/components/UserBox.vue')['default']
     VanButton: typeof import('vant/es')['Button']
-    VanCell: typeof import('vant/es')['Cell']
-    VanEmpty: typeof import('vant/es')['Empty']
     VanOverlay: typeof import('vant/es')['Overlay']
   }
 }

@@ -3,10 +3,10 @@
 <template>
     <div class="head">
         <div class="logo logo_left">
-            <img src="@/assets/img/samyang.png" alt="" />
+            <img src="//gitee.com/qingyun-cottage/resource/raw/main/app/turkey-h5/img/samyang.png" alt="" />
         </div>
         <div class="logo logo_right">
-            <img src="@/assets/img/hot_sauce.svg" alt="" />
+            <img src="//gitee.com/qingyun-cottage/resource/raw/main/app/turkey-h5/img/hot_sauce.svg" alt="" />
         </div>
     </div>
 </template>
